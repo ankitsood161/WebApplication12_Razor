@@ -1,0 +1,55 @@
+﻿@page
+@model WebApplication12_Razor.Pages.BookList.EditModel
+
+<h2 class="text-primary text-center">Edit Books</h2>
+<br/>
+<br/>
+<form method="post">
+    <input type="hidden" asp-for="Book.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container border">
+        <div class="form-group row p-2 m-2">
+            <div class="col-3">
+                <label asp-for="Book.Title" class="form-control"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.Title" class="form-control" />
+                <span asp-validation-for="Book.Title" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row p-2 m-2">
+            <div class="col-3">
+                <label asp-for="Book.Author" class="form-control"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.Author" class="form-control" />
+                <span asp-validation-for="Book.Author" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row p-2 m-2">
+            <div class="col-3">
+                <label asp-for="Book.ISBN" class="form-control"> </label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Book.ISBN" class="form-control" />
+                <span asp-validation-for="Book.ISBN" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row p-2 m-2">
+            <div class="col-3 offset-3">
+                <a asp-page="Index" class="btn btn-outline-info form-control">
+                    Back To List
+                </a>
+            </div>
+            
+                <div class="col-3">
+                    <input type="submit" value="Update" class="btn btn-outline-success form-control" />
+                </div>
+            
+        </div>
+    </div>
+</form>
+@section scripts
+{
+<partial name="_ValidationScriptsPartial" />
+}
